@@ -6,12 +6,13 @@ pipeline {
             steps {
                 script {
                     try {
-                        def firstFile = 'hello'
-                        //secondFile = 'hello'
-                        def stopPrimary = sh(returnStdout: true, script: "hello | md5sum").trim()
+                        sh """
+                        pwd
+                        """
+                        /*def stopPrimary = sh(returnStdout: true, script: "hello | md5sum").trim()
                         println stopPrimary
                         println "Comparing..."
-                        sleep(10)
+                        sleep(10)*/
                     } catch (err) {
                         println err
                         ERRORMESSAGE = "The hash codes doesn't match."
