@@ -6,8 +6,8 @@ pipeline {
             steps {
                 script {
                     try {
-                        check1=sh(returnStdout: true, script: 'shasum -a 512 check.txt')
-                        check2=sh(returnStdout: true, script: 'shasum -a 512 check2.txt')
+                        check1=sh(returnStdout: true, script: 'shasum -a 512 check.txt').trim()
+                        check2=sh(returnStdout: true, script: 'shasum -a 512 check2.txt').trim()
                         println check1
                         println check2
                         if (check1.equals(check2)) {
