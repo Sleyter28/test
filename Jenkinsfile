@@ -10,7 +10,7 @@ pipeline {
                         check2=sh(returnStdout: true, script: 'shasum -a 512 check2.txt')
                         println check1
                         println check2
-                        if (check1==check2) {
+                        if (check1.equals(check2)) {
                             println "They are the same"
                         }
                         else {
