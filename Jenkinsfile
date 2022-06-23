@@ -7,7 +7,7 @@ pipeline {
                 script {
                     try {
                         sh """
-                        pwd
+                        ls
                         """
                         /*def stopPrimary = sh(returnStdout: true, script: "hello | md5sum").trim()
                         println stopPrimary
