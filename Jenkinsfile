@@ -14,7 +14,7 @@ pipeline {
                             println "They are the same"
                         }
                         else {
-                            throw New Exception('Error')
+                            throw new Exception('Error')
                         }
                         // sh """
                         // #!/bin/sh
