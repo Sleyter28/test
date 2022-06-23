@@ -7,7 +7,9 @@ pipeline {
                 script {
                     try {
                         check1=sh(returnStdout: true, script: 'shasum -a 512 check.txt')
+                        check2=sh(returnStdout: true, script: 'shasum -a 512 check2.txt')
                         println check1
+                        println check2
                         // sh """
                         // #!/bin/sh
                         // check1=`shasum -a 512 check.txt`
