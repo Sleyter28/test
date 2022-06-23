@@ -7,13 +7,12 @@ pipeline {
                 script {
                     try {
                         sh """
-                        echo=`shasum -a 512 check.txt`
-                        echo=`shasum -a 512 check2.txt` 
+                        #!/bin/sh
+                        check1=`shasum -a 512 check.txt`
+                        check2=`shasum -a 512 check2.txt` 
+                        echo $check1
+                        echo $check2
                         """
-                        /*def stopPrimary = sh(returnStdout: true, script: "hello | md5sum").trim()
-                        println stopPrimary
-                        println "Comparing..."
-                        sleep(10)*/
                     } catch (err) {
                         println err
                         ERRORMESSAGE = "The hash codes doesn't match."
