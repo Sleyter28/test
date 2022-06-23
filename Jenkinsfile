@@ -7,7 +7,8 @@ pipeline {
                 script {
                     try {
                         sh """
-                        ls
+                        checksum=`shasum -a 512 check.txt`
+                        echo $checksum
                         """
                         /*def stopPrimary = sh(returnStdout: true, script: "hello | md5sum").trim()
                         println stopPrimary
